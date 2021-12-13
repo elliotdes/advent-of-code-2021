@@ -95,6 +95,14 @@ def parse_input(input_file: str) -> list:
 
 
 def part_1(rough_map: list) -> int:
+    """Solve part 1.
+
+    Args:
+        rough_map (list): Puzzle input.
+
+    Returns:
+        int: Number of paths.
+    """
     caves = Graph()
     for i in rough_map:
         caves.add_vertex(i[0], i[1])
@@ -102,7 +110,15 @@ def part_1(rough_map: list) -> int:
     return len(paths)
 
 
-def part_2(rough_map: list):
+def part_2(rough_map: list) -> int:
+    """Solve part 2.
+
+    Args:
+        rough_map (list): Puzzle input.
+
+    Returns:
+        int: Number of paths.
+    """
     caves = Graph()
     for i in rough_map:
         caves.add_vertex(i[0], i[1])
