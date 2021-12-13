@@ -19,4 +19,5 @@ def make_day(day: int):
 
 if __name__ == "__main__":
     for i in range(1, 26):
+        i = "{0:02d}".format(i)
         make_day(i)
