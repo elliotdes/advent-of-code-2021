@@ -116,7 +116,6 @@ def part_2(rough_map: list):
 def test_parse_input():
     output = parse_input("day12/example1.txt")
     assert type(output) is list
-    print(output)
     assert all(type(i) is list for i in output)
 
 
