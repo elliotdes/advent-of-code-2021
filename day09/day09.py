@@ -135,7 +135,7 @@ def parse_input(input_file: str) -> list:
 
 
 def test_parse_input():
-    output = parse_input("day9/example.txt")
+    output = parse_input("day09/example.txt")
     assert type(output) is list
     assert all(type(i) is list for i in output)
     for i in output:
@@ -143,7 +143,7 @@ def test_parse_input():
 
 
 def test_is_low_point():
-    grid = parse_input("day9/example.txt")
+    grid = parse_input("day09/example.txt")
     cave = Cave(grid)
     assert cave.is_low_point(1, 0)
     assert cave.is_low_point(9, 0)
@@ -156,13 +156,13 @@ def test_is_low_point():
 
 
 def test_part_1():
-    output = parse_input("day9/example.txt")
+    output = parse_input("day09/example.txt")
     cave = Cave(output)
     assert cave.calculate_risk_level() == 15
 
 
 def test_basin_size():
-    grid = parse_input("day9/example.txt")
+    grid = parse_input("day09/example.txt")
     cave = Cave(grid)
     assert cave.basin_size(1, 0) == 3
     assert cave.basin_size(9, 0) == 9
@@ -171,13 +171,13 @@ def test_basin_size():
 
 
 def test_part_2():
-    output = parse_input("day9/example.txt")
+    output = parse_input("day09/example.txt")
     cave = Cave(output)
     assert cave.part_2() == 1134
 
 
 if __name__ == "__main__":
-    output = parse_input("day9/input.txt")
+    output = parse_input("day09/input.txt")
     cave = Cave(output)
     answer_1 = cave.calculate_risk_level()
     answer_2 = cave.part_2()

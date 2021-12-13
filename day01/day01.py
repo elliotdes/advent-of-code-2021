@@ -55,25 +55,25 @@ def part_2(depth_measurements: list, sliding_window: int = 3) -> int:
 
 
 def test_parse_input():
-    output = parse_input("day1/input.txt")
+    output = parse_input("day01/input.txt")
     assert type(output) is list
     assert all(type(i) is int for i in output)
 
 
 def test_part_1():
-    output = parse_input("day1/example.txt")
+    output = parse_input("day01/example.txt")
     answer = part_1(output)
     assert answer == 7
 
 
 def test_part_2():
-    output = parse_input("day1/example.txt")
+    output = parse_input("day01/example.txt")
     answer = part_2(output)
     assert answer == 5
 
 
 if __name__ == "__main__":
-    output = parse_input("day1/input.txt")
+    output = parse_input("day01/input.txt")
     answer_1 = part_1(output)
     answer_2 = part_2(output)
     print("Day 1 Solutions:")

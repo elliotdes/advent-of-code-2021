@@ -63,13 +63,13 @@ def min_fuel_mean(crabs: list) -> int:
 
 
 def test_parse_input():
-    output = parse_input("day7/example.txt")
+    output = parse_input("day07/example.txt")
     assert type(output) is list
     assert all(type(i) is int for i in output)
 
 
 def test_part_1():
-    output = parse_input("day7/example.txt")
+    output = parse_input("day07/example.txt")
     fuel_cost = min_fuel_median(output)
     assert fuel_cost == 37
 
@@ -82,13 +82,13 @@ def test_triangular_numbers():
 
 
 def test_part_2():
-    output = parse_input("day7/example.txt")
+    output = parse_input("day07/example.txt")
     fuel_cost = min_fuel_mean(output)
     assert fuel_cost == 168
 
 
 if __name__ == "__main__":
-    output = parse_input("day7/input.txt")
+    output = parse_input("day07/input.txt")
     answer_1 = min_fuel_median(output)
     answer_2 = min_fuel_mean(output)
 

@@ -68,25 +68,25 @@ def part_2(commands: list) -> int:
 
 
 def test_parse_input():
-    output = parse_input("day2/example.txt")
+    output = parse_input("day02/example.txt")
     assert type(output) is list
     assert all(type(i) is tuple for i in output)
 
 
 def test_part_1():
-    output = parse_input("day2/example.txt")
+    output = parse_input("day02/example.txt")
     answer = part_1(output)
     assert answer == 150
 
 
 def test_part_2():
-    output = parse_input("day2/example.txt")
+    output = parse_input("day02/example.txt")
     answer = part_2(output)
     assert answer == 900
 
 
 if __name__ == "__main__":
-    output = parse_input("day2/input.txt")
+    output = parse_input("day02/input.txt")
     answer_1 = part_1(output)
     answer_2 = part_2(output)
 

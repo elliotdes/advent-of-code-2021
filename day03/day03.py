@@ -134,37 +134,37 @@ def part_2(binary_numbers: list) -> int:
 
 
 def test_parse_input():
-    output = parse_input("day3/example.txt")
+    output = parse_input("day03/example.txt")
     assert type(output) is list
     assert all(type(i) is str for i in output)
 
 
 def test_part_1():
-    output = parse_input("day3/example.txt")
+    output = parse_input("day03/example.txt")
     answer = part_1(output)
     assert answer == 198
 
 
 def test_o2_generator_rating():
-    output = parse_input("day3/example.txt")
+    output = parse_input("day03/example.txt")
     rating = bit_criteria_rating(output, "1")
     assert rating == 23
 
 
 def test_co2_scrubber_rating():
-    output = parse_input("day3/example.txt")
+    output = parse_input("day03/example.txt")
     rating = bit_criteria_rating(output, "0")
     assert rating == 10
 
 
 def test_part_2():
-    output = parse_input("day3/example.txt")
+    output = parse_input("day03/example.txt")
     answer = part_2(output)
     assert answer == 230
 
 
 if __name__ == "__main__":
-    output = parse_input("day3/input.txt")
+    output = parse_input("day03/input.txt")
     answer_1 = part_1(output)
     answer_1b = part_1b(output)
     answer_2 = part_2(output)

@@ -151,7 +151,7 @@ def part_2(lines: list) -> int:
 
 
 def test_parse_input():
-    output = parse_input("day5/example.txt")
+    output = parse_input("day05/example.txt")
     assert type(output) is list
     for coords in output:
         assert all(type(i) is tuple for i in coords)
@@ -170,7 +170,7 @@ def test_interpolate_line():
 
 
 def test_part_1():
-    output = parse_input("day5/example.txt")
+    output = parse_input("day05/example.txt")
     answer = part_1(output)
     assert answer == 5
 
@@ -183,13 +183,13 @@ def test_interpolate_diag():
 
 
 def test_part_2():
-    output = parse_input("day5/example.txt")
+    output = parse_input("day05/example.txt")
     answer = part_2(output)
     assert answer == 12
 
 
 if __name__ == "__main__":
-    output = parse_input("day5/input.txt")
+    output = parse_input("day05/input.txt")
     answer_1 = part_1(output)
     answer_2 = part_2(output)
 

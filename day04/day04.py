@@ -122,7 +122,7 @@ def part_2(numbers: list, boards: list) -> int:
 
 
 def test_parse_input():
-    numbers, boards = parse_input("day4/example.txt")
+    numbers, boards = parse_input("day04/example.txt")
     assert type(numbers) is list
     assert all(type(i) is int for i in numbers)
     assert len(boards) == 3
@@ -131,19 +131,19 @@ def test_parse_input():
 
 
 def test_part_1():
-    numbers, boards = parse_input("day4/example.txt")
+    numbers, boards = parse_input("day04/example.txt")
     answer = part_1(numbers, boards)
     assert answer == 4512
 
 
 def test_part_2():
-    numbers, boards = parse_input("day4/example.txt")
+    numbers, boards = parse_input("day04/example.txt")
     answer = part_2(numbers, boards)
     assert answer == 1924
 
 
 if __name__ == "__main__":
-    numbers, boards = parse_input("day4/input.txt")
+    numbers, boards = parse_input("day04/input.txt")
     answer_1 = part_1(numbers, boards)
     answer_2 = part_2(numbers, boards)
 
