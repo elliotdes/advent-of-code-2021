@@ -2,6 +2,12 @@ import heapq
 
 
 class Cavern:
+    """Cavern.
+
+    Args:
+        grid (list): Grid of cavern.
+    """
+
     def __init__(self, grid: list) -> None:
         self.len_x = len(grid[0])
         self.len_y = len(grid)
@@ -45,10 +51,10 @@ class Cavern:
         """Djikstras.
 
         Args:
-            xy (tuple): [description]
+            xy (tuple): Destination coordinates.
 
         Returns:
-            int: [description]
+            int: Accumulated risk.
         """
         cost = dict.fromkeys(self.grid.keys(), float("infinity"))
         cost[(0, 0)] = 0
@@ -71,7 +77,12 @@ class Cavern:
                     cost[n] = new_risk
                     heapq.heappush(pq, (new_risk, n))
 
-    def enlarge_cavern(self, n: int) -> dict:
+    def enlarge_cavern(self, n: int):
+        """Enlarge cavern.
+
+        Args:
+            n (int): Factor to enlarge cavern by.
+        """
         coords = list(self.grid.keys())
         for x, y in coords:
             for x_diff, x_i in enumerate(range(x, x + self.len_x * n, self.len_x)):
@@ -86,6 +97,16 @@ class Cavern:
         self.max_y = self.len_y - 1
 
     def minimum_path_recursion(self, x: int, y: int) -> int:
+        """A recursive solution I tried to part 1.
+        Recursion depth is reached, is it possible to make it work?
+
+        Args:
+            x (int): Destination x.
+            y (int): Destination y.
+
+        Returns:
+            int: Accumulated risk.
+        """
         if x == 0 and y == 0:
             return 0
         else:
@@ -114,6 +135,14 @@ def parse_input(input_file: str) -> list:
 
 
 def grid_list_to_dict(grid: list) -> dict:
+    """Convert grid made of lists to a dict.
+
+    Args:
+        grid (list): Grid to convert.
+
+    Returns:
+        dict: Dict representation of grid.
+    """
     grid_dict = {}
     for y, row in enumerate(grid):
         for x, risk in enumerate(row):
