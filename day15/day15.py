@@ -15,14 +15,6 @@ class Cavern:
         self.max_y = self.len_y - 1
         self.grid = grid_list_to_dict(grid)
 
-    def min_node(self, not_visited: set, cost: dict) -> tuple:
-        nv = list(not_visited)
-        node = nv[0]
-        for i in not_visited:
-            if cost[i] < cost[node]:
-                node = i
-        return node
-
     def risk(self, xy: tuple) -> int:
         return self.grid[xy]
 
