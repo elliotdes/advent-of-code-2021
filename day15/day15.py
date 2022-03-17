@@ -1,3 +1,6 @@
+import heapq
+
+
 class Cavern:
     def __init__(self, grid: list) -> None:
         self.len_x = len(grid[0])
@@ -49,17 +52,24 @@ class Cavern:
         """
         cost = dict.fromkeys(self.grid.keys(), float("infinity"))
         cost[(0, 0)] = 0
-        not_visited = set(self.grid.keys())
-        while not_visited:
-            node = self.min_node(not_visited, cost)
-            not_visited.remove(node)
-            neighbours = [n for n in self.get_neighbours(node) if n in not_visited]
-            for n in neighbours:
-                new_cost = cost[node] + self.risk(n)
-                if new_cost < cost[n]:
-                    cost[n] = new_cost
+        pq = [(0, (0, 0))]
+        visited = set()
+        while pq:
+            current_risk, node = heapq.heappop(pq)
 
-        return cost[xy]
+            if node == xy:
+                return current_risk
+
+            if node in visited:
+                continue
+            visited.add(node)
+
+            neighbours = [n for n in self.get_neighbours(node) if n not in visited]
+            for n in neighbours:
+                new_risk = current_risk + self.risk(n)
+                if new_risk < cost[n]:
+                    cost[n] = new_risk
+                    heapq.heappush(pq, (new_risk, n))
 
     def enlarge_cavern(self, n: int) -> dict:
         coords = list(self.grid.keys())
